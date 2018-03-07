@@ -14,14 +14,13 @@ app.get('/restaurants/:id', function (req, res) {
   res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
-app.get('/api/restaurants/:id', function (req, res) {
-  request(`http://127.0.0.1:3004/restaurants/${req.params.id}`).pipe(res)
-  // res.redirect(`http://127.0.0.1:3003/api/restaurants/${req.params.id}`)
+app.get('/api/restaurants/:id/overview', function (req, res) {
+  res.redirect(`http://127.0.0.1:3002/api/restaurants/${req.params.id}/overview`)
 });
 
-app.get('/api/restaurants/recommended/:id', function (req, res) {
-  request(`http://127.0.0.1:3004/api/restaurants/recommended/${req.params.id}`).pipe(res)
-  // res.redirect(`http://127.0.0.1:3003/api/restaurants/recommended/${req.params.id}`)
+app.get('/api/restaurants/:id/recommendations', function (req, res) {
+  // request(`http://127.0.0.1:3004/api/restaurants/${req.params.id}/recommendations`).pipe(res)
+  res.redirect(`http://127.0.0.1:3004/api/restaurants/${req.params.id}/recommendations`)
 });
 
 app.listen(port, () => {
