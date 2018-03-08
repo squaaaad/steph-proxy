@@ -9,13 +9,17 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/restaurants/:id', function (req, res) {
-  // console.log('goooo')
-  // console.log(req.params.id)
   res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
+app.get('/api/restaurants/:id/gallery', function (req, res) {
+  res.redirect(`http://127.0.0.1:3001/api/restaurants/${req.params.id}/gallery`)
+});
 app.get('/api/restaurants/:id/overview', function (req, res) {
   res.redirect(`http://127.0.0.1:3002/api/restaurants/${req.params.id}/overview`)
+});
+app.get('/api/restaurants/:id/sidebar', function (req, res) {
+  res.redirect(`http://127.0.0.1:3003/api/restaurants/${req.params.id}/sidebar`)
 });
 
 app.get('/api/restaurants/:id/recommendations', function (req, res) {
