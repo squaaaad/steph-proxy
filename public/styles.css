@@ -7,7 +7,7 @@
   display:flex;
 }
 #overview-wrapper{
-  margin-right: 40px;
+  margin: 0 40px;
 }
 #sidebar-app{
   margin-right: 40px;
